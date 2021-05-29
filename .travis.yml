@@ -18,5 +18,4 @@ after_success:
   - git config --global user.email "goskate004@gmail.com"
   - git remote rm origin
   - git remote add origin http://${GH_TOKEN}@github.com:Georgi768/TravisValidation.git
-  - npm run deploy
   - git add --all git commit -m "Testing" git push origin master
