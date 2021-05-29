@@ -19,4 +19,4 @@ after_success:
   - git remote rm origin
   - git add --all git commit -m "Testing"
   - git remote add origin http://${GH_TOKEN}@github.com/Georgi768/TravisValidation.git
-  - git push -u origin master
+  - git push -u origin main
