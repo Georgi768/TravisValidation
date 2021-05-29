@@ -3,6 +3,12 @@ python:
   - "3.8"
 services: docker
 
+env:
+  - USER="Georgi768"
+  - EMAIL="goskate004@gmail.com"
+  - REPO="TravisValidation"
+  - GH_REPO="github.com/${USER}/${REPO}.git"
+
 before_install:
   - sudo apt-get update
 cache: pip
@@ -12,3 +18,11 @@ install:
   - pip install -e .
 script:
   - flake8 src/Index.py
+
+after_success:
+  - git config --global user.name "Georgi768"
+  - git config --global user.email "goskate004@gmail.com"
+  - git remote rm origin
+  - git remote add origin http://${USER}:${GH_TOKEN}@github.com:Georgi768/TravisValidation.git
+  - npm run deploy
+  - git add --all git commit -m "Testing" git push origin master
