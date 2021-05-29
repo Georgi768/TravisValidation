@@ -14,7 +14,7 @@ script:
   - flake8 src/Index.py
 
 after_success:
-  - git config --global user.name "Georgi768"
+  - git config --global user.name "georgi768"
   - git config --global user.email "goskate004@gmail.com"
   - git remote rm origin
   - git add .
