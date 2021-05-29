@@ -16,6 +16,7 @@ script:
 after_success:
   - git config --global user.name "Georgi768"
   - git config --global user.email "goskate004@gmail.com"
-  - git add --all git commit -m "Testing"
+  - git remote rm origin
+  - git add --all git commit -message "Testing"
   - git remote add origin http://${GH_TOKEN}@github.com/Georgi768/TravisValidation.git
   - git push -u origin main
