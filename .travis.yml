@@ -19,5 +19,5 @@ after_success:
   - git remote rm origin
   - git add src/Index.py/
   - git commit -m "Testing"
-  - git remote add origin https://${GH_TOKEN}@github.com/Georgi768/TravisValidation.git
-  - git push Competed
+  - git remote add origin https://${GH_TOKEN}@https://github.com/Georgi768/TravisCiSolutions.git
+  - git push -u origin main
