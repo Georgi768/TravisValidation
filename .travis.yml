@@ -11,13 +11,14 @@ install:
   - pip install -r requirements.txt
   - pip install -e .
 script:
-  - flake8 Index.py
+  - flake8 src/Index.py
 
 after_success:
   - git config --global user.name "georgi768"
   - git config --global user.email "goskate004@gmail.com"
   - git remote rm origin
-  - git add Index.py
+  - git add src/Index.py/
   - git commit -m "Testing"
   - git remote add origin https://${GH_TOKEN}@github.com/Georgi768/TravisCiSolutions.git
   - git push -u origin main
+  - git fetch --all
